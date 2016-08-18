@@ -1,7 +1,7 @@
 /* =============================== *
  *  Deep Learning Dashboard v0.1   *
  * Jin-Hwa Kim (jnhwkim@snu.ac.kr) *
- *      License: BSD 3-Clause      *
+ *      License: MIT License       *
  * =============================== */
 var exec = require('child_process').execSync;  // Added in: v0.11.12
 function execute(command){
