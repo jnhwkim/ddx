@@ -27,7 +27,7 @@ sudo n stable
 Optionally,
 
 ```bash
-echo "node /path/to/ddx/dashboard.js" | sudo tee /usr/local/bin/ddx
+echo "node /path/to/ddx/dashboard.js $1 $2 $3 $4" | sudo tee /usr/local/bin/ddx
 sudo chmod 755 /usr/local/bin/ddx
 ```
 
