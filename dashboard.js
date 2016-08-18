@@ -9,8 +9,8 @@ function execute(command){
 };
 var csvjson = require('csvjson');
 var logfile = process.argv[2] && [process.argv[2]] || getRecentLogs(4, 9);
-if (!logfile || logfile.length == 0) logfile = getRecentLogs(4, null);
-if (!logfile || logfile.length == 0) {
+if (!logfile || logfile.length == 0 || logfile[0] == '') logfile = getRecentLogs(4, null);
+if (!logfile || logfile.length == 0 || logfile[0] == '') {
   console.error('Cannot find any *.log files!');
   process.exit();
 }
