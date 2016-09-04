@@ -34,7 +34,7 @@ var blessed = require('blessed')
      , xLabelPadding: -10
      , xPadding: -10
      , showLegend: true
-     , legend: {width: 10}
+     , legend: {width: 11}
      , wholeNumbersOnly: false})
   , gmemories = grid.set(2, 1, 1, 1, contrib.line,
      { label: 'Memory-Usage (MiB)'
@@ -172,7 +172,11 @@ screen.key(['-','_'], function(ch, key) {
      start_iter = Math.max(0, start_iter-size_iter);
 });
 
-var line = makeLine(grid, 'Loss', logfile[0].length+8);
+var maxlen = -1;
+for (var i = 0; i < logfile.length; i++) {
+  if (maxlen < logfile[i].length) maxlen = logfile[i].length;
+}
+var line = makeLine(grid, 'Loss', maxlen+8);
 
 refresh();
 screen.render();
